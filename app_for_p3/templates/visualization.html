@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Breast Cancer Machine Learning</title>
+
+    <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen">
+
+    <!-- Our own CSS stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+
+  </head>
+
+  <body>
+    <!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-6">
+              <a class="navbar-brand" href="index.html" id="logo">Breast Cancer Machine Learning</a>
+            </div>
+          </div>
+          <div class = "col-2">
+            <img src="assets/images/pink_ribbon.png" id="ribbon-image">
+        </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analyses <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="">Malignant vs Benign</a></li>
+                  <li><a href="">Malignant Recurrent vs Nonrecurrent</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Sets <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                   <li><a href="/data1">Malignant vs Benign</a></li>
+                    <li><a href="/data2">Malignant Recurrent vs Nonrecurrent</a></li>
+                  </ul>
+                </li>            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+    <h1 class="description-h1">Visualization</h1>
+    <br/>
+    <p><h5 class = "explanation">Relation between all the cell nucleus properties (radius, etc.) used in order to complete our analysis</h5></p>
+    <section id="visual">
+    <div class="row">
+        <div class="col-md-12">
+            <a href="visulization.html"><img src="output.png" width="100%"></a>
+        </div>
+    </div>
+    </section>
+
+        <!-- Start of footer -->
+        <footer class="footer navbar-fixed-bottom">
+            <div class="two-toned-footer-color"></div>
+            <p class="text-muted text-muted-footer text-center">
+              <a href="https://github.com/sharonsu94/breast-cancer-prediction.git">Github link</a>
+      
+            </p>
+          </footer>
+          <!-- End of footer -->
+      
+          <!-- jQuery CDN -->
+          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      
+          <!-- Bootstrap CDN -->
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        </body>
+      
+      </html>
