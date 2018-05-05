@@ -35,12 +35,13 @@
             </div>
           </div>
           <div class = "col-2">
-            <img src="../static/images/pink_ribbon.png" id="ribbon-image">
+            <img src="../static/css/images/pink_ribbon.png" id="ribbon-image">
         </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analyses <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -54,7 +55,9 @@
                    <li><a href="/data1">Malignant vs Benign</a></li>
                     <li><a href="/data2">Malignant Recurrent vs Nonrecurrent</a></li>
                   </ul>
-                </li>            </ul>
+                </li>  
+                <li><a href="/features">Features</a></li>
+                </ul>
           </div><!-- /.navbar-collapse -->
         </div>
       </div><!-- /.container-fluid -->
@@ -79,7 +82,8 @@
                   </ul>
                     <h3 class="description-header">Cell Nucleus Attributes</h3>
                     <hr>
-
+                    <iframe width="1000" height="900" frameborder="0" 
+                src=../static/css/tree_breast_cancer/tree_cell.html allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
                 <ul>
                     <li>Radius: means of distance from center to points on the perimeter</li>
                     <li>Texture: standard deviation of gray-scale values</li>
@@ -103,13 +107,13 @@
               <h2 class="imageNav-header">Visualizations</h2>
               <hr />
               <div id="images">
-                <a href="/visualization"><img src="../static/images/output.png" alt="Latitude vs. Max Temperature" class="imageNav-photo"></a>
+                <a href="/visualization"><img src="../static/css/images/output.png" alt="Latitude vs. Max Temperature" class="imageNav-photo"></a>
                 <br/>
                 <hr>
                 <h2 class="imageNav-header">Cell Nucleus</h2>
                 <br/>
-                <img src="../static/images/breast_cancer_benign.png" class="imageNav-photo">
-                <img src="../static/images/breast_cancer_malignant.png" class="imageNav-photo">
+                <img src="../static/css/images/breast_cancer_benign.png" class="imageNav-photo">
+                <img src="../static/css/images/breast_cancer_malignant.png" class="imageNav-photo">
 
               </div>
            </div>
