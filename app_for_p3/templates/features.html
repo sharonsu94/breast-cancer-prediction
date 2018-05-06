@@ -63,7 +63,133 @@
       </div><!-- /.container-fluid -->
     </nav>
     <!-- End of navbar -->
+    
+    <!-- Start of container -->
+    <div class="container">
+      <section class="row">
+        <div class="col-md-12">
+          <article class="description-content">
+            <h1 class="description-header">Feature Selection</h1>
+                <hr>
+                <p>The purpose was to choose features with a high correlation with the target and a low correlation with other features.</p>
+                <p>The different methods that we used were:
+                    <ul>
+                        <li type="square">Filter Methods</li>
+                            <ul class="methods">
+                                <li>Correlation Values</li>
+                            </ul>
+                        <li type="square">Wrapper Methods</li>
+                            <ul class="methods">
+                                <li>Step backward</li>
+                                <li>Exhaustive search</li>
+                            </ul>
+                        <li type="square">Embadded Methods</li>
+                            <ul class="methods">
+                                <li>Lasso regulation</li>
+                                <li>Random Forest recursive</li>
+                                <li>Hybrid recursive</li>
+                            </ul>
+                </ul>
+                <p>And then we tested all results with:</p>
+                <ul>
+                  <li>SVM (Support Vector Machine)</li>
+                  <li>KNN (K Nearest Neighbor)</li>
+                  <li>Random Forest</li>
+                  <li>Naive Bayes</li>
+                  <li>Deep Learning</li>
+                </ul>
+                <p>Average Performance: C > R > H > L > E > B</p>
+                <table style="width:60%">
+                  <tr>
+                    <th>Method</th>
+                    <th>Number of Features</th> 
+                    <th>Performance</th>
+                  </tr>
+                  <tr>
+                    <td>Correlation Values</td>
+                    <td>20</td>
+                    <td>~98%</td>
+                  </tr>
+                  <tr>
+                    <td>Random Forest recursive</td>
+                    <td>10</td>
+                    <td>95%~96%</td>
+                  </tr>
+                  <tr>
+                    <td>Hybrid recursive</td>
+                    <td>9</td>
+                    <td>~95%</td>
+                  </tr>
+                  <tr>
+                    <td>Lasso regulation</td>
+                    <td>12</td>
+                    <td>93%~94%</td>
+                  </tr>
+                  <tr>
+                    <td>Exhaustive search</td>
+                    <td>4</td>
+                    <td>92%</td>
+                  </tr>
+                  <tr>
+                    <td>Step Backward</td>
+                    <td>1</td>
+                    <td>83%~88%</td>
+                  </tr>
+                </table>
+                
+                <p>Based on the results, We discovered that filtering by <b>Correlation Values</b></p>
+                <p>Here is the flow:</p>
+                <p>Based on the heatmap that I created, there were some features that had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature.</p>
+                <img src="../static/css/images/heatmap30.png" width="60%">
+                <p>This is the final heat map for the correlation values. We only kept 20 of the 30 features. </p>
+                <img src="../static/css/images/heatmap20.png" width="60%">
 
+                <table style="width:60%">
+                  <tr>
+                    <th>ML Model</th>
+                    <th>Selected Features</th> 
+                    <th>Original Features</th>
+                  </tr>
+                  <tr>
+                    <td>Support Vector Machine</td>
+                    <td>97.9%</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>Logistic Regression</td>
+                    <td>96.4%</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>K Nearest Neighbor</td>
+                    <td>97.2%</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>Random Forest</td>
+                    <td>95%</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>Naive Bayes</td>
+                    <td>90.8</td>
+                    <td>?</td>
+                  </tr>
+                  <tr>
+                    <td>Deep Learning</td>
+                    <td>97.8%</td>
+                    <td>?</td>
+                  </tr>
+                </table>
+
+                <ul>
+                    <li>This dataset might be well organized</li>
+                    <li>The features are well chosen by doctors who had affluent domain knowledge</li>
+                    <li>Dataset is small(568 samples and 30 features)</li>
+                </ul>
+          </article>
+        </div>
+    <div class="col-md-4">
 
 
     <!-- Start of footer -->
