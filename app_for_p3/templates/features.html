@@ -70,7 +70,7 @@
                 <p>The purpose was to choose features with a high correlation with the target and a low correlation with other features</p>
                 <h1 class="description-header">Feature Selection Methods</h1>
                 <hr>
-                <iframe class="chart" src="d3.html" style="height:600px;width:1140px;"></iframe>
+                <iframe class="chart" src="d3.html" style="height:600px;width:900px;" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
                 <p>The different methods that we used were:
                     <ul>
                         <li>Filter Methods</li>
@@ -210,7 +210,11 @@
 
     <!-- jQuery CDN -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
     <!-- Bootstrap CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
