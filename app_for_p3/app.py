@@ -4,7 +4,7 @@
 
 import os
 import pandas as pd
-from flask import (Flask, render_template, jsonify, request)
+from flask import (Flask, render_template, jsonify, request, url_for, json)
 from flask_uploads import UploadSet, DATA, configure_uploads
 
 from sklearn.preprocessing import StandardScaler
@@ -75,7 +75,35 @@ def model_predict():
 # Render static webpages
 @app.route('/')
 def render_home_page():
-    return render_template('index.html')
+    url = "/d3"
+    return render_template('index.html', iframe=url)
+
+@app.route('/flare')
+def render_flare():
+    return jsonify({"name": "Cell Nucleus",
+     "children": [
+         {"name": "Radius", 
+             "children": [{"name": "a straight line from the center to the circumference of the nucleus"}]}, 
+         {"name": "Perimeter", 
+             "children": [{"name": "the continuous line forming the boundary of the nucleus"}]}, 
+         {"name": "Area"}, 
+         {"name": "Symmetry"}, 
+         {"name": "Texture", 
+             "children": [{"name": "standard deviation of gray-scale values"}]}, 
+         {"name": "Smoothness", 
+             "children": [{"name": "variation in radius lengths"}]}, 
+         {"name": "Compactness", 
+             "children": [{"name": "(perimeter^2 / area) - 1.0"}]}, 
+         {"name": "Concavity", 
+             "children": [{"name": " severity of concave portions of the contour"}]},
+         {"name": "Concave Points", 
+             "children": [{"name": "number of concave portions of the contour"}]}, 
+         {"name": "Fractal Dimension", 
+            "children": [{"name": "coastline approximation (using straight lines to approximate fractals) - 1"}]}]})
+
+@app.route('/d3')
+def render_d3_page():
+    return render_template('d3.html')
 
 @app.route('/visualization')
 def render_visualization_page():
@@ -91,7 +119,7 @@ def render_data2_page():
 
 @app.route('/features')
 def render_features_page():
-    return render_template('/features.html')
+    return render_template('features.html')
 
 @app.route('/diagnosis_results')
 def render_results_page():

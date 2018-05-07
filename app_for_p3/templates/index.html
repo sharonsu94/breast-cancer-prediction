@@ -78,7 +78,7 @@
                   </ul>
                     <h3 class="description-header">Cell Nucleus Attributes</h3>
                     <hr>
-
+                    <iframe class="chart" src="{{ iframe }}" style="height:600px;width:900px;" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
                 <ul>
                     <li>Radius: means of distance from center to points on the perimeter</li>
                     <li>Texture: standard deviation of gray-scale values</li>
@@ -158,7 +158,11 @@
 
     <!-- jQuery CDN -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+      }
+    </script>
     <!-- Bootstrap CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
