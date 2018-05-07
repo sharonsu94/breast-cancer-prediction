@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Breast Cancer Machine Learning</title>
+
+    <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">
+
+    <!-- Our own CSS stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" media="screen">
+
+  </head>
+
+  <body>
+    <!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-6">
+              <a class="navbar-brand" href="/" id="logo">Breast Cancer Machine Learning</a>
+            </div>
+          </div>
+          <div class = "col-2">
+            <img src="{{ url_for('static', filename='images/pink_ribbon.png') }}" id="ribbon-image">
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li>
+                <a href="/visualization" role="button" aria-haspopup="true" aria-expanded="false">Visualization</a>
+              </li>
+              <li>
+                <a href="/features" role="button" aria-haspopup="true" aria-expanded="false">Feature Engineering</a>
+              </li>
+              <li>
+                <a href="/diagnosis_app" role="button" aria-haspopup="true" aria-expanded="false">Diagnosis App</a>
+              </li>
+              <li>
+                <a href="data1" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+    
+    <!-- Start of container -->
+    <div class="container">
+      <section class="row">
+        <div class="col-md-10">
+          <article class="description-content">
+            <h1 class="description-header">Feature Selection</h1>
+                <hr>
+                <!-- <iframe class="chart" src="d3.html" style="height:600px;width:1140px;"></iframe> -->
+                <p class="feature-content">The purpose was to choose features with a high correlation with the target and a low correlation with other features</p>
+                <p class="feature-content">The different methods that we used were:
+                    <ul>
+                        <li>Filter Methods</li>
+                            <ul class="methods">
+                                <li>Correlation Values</li>
+                            </ul>
+                        <li>Wrapper Methods</li>
+                            <ul class="methods">
+                                <li>Step backward</li>
+                                <li>Exhaustive search</li>
+                            </ul>
+                        <li>Embadded Methods</li>
+                            <ul class="methods">
+                                <li>Lasso regulation</li>
+                                <li>Random Forest recursive</li>
+                                <li>Hybrid recursive</li>
+                            </ul>
+                </ul>
+                <p class="feature-content">And then we tested all results with:</p>
+                <ul>
+                  <li>SVM (Support Vector Machine)</li>
+                  <li>KNN (K Nearest Neighbor)</li>
+                  <li>Random Forest</li>
+                  <li>Naive Bayes</li>
+                  <li>Deep Learning</li>
+                </ul>
+                <p class="feature-content">Average Performance: C > R > H > L > E > B</p>
+                <table style="width:60%" border="1">
+                  <tr>
+                    <th>Method</th>
+                    <th>Number of Features</th> 
+                    <th>Performance</th>
+                  </tr>
+                  <tr>
+                    <td>Correlation Values</td>
+                    <td>20</td>
+                    <td>~98%</td>
+                  </tr>
+                  <tr>
+                    <td>Random Forest recursive</td>
+                    <td>10</td>
+                    <td>95%~96%</td>
+                  </tr>
+                  <tr>
+                    <td>Hybrid recursive</td>
+                    <td>9</td>
+                    <td>~95%</td>
+                  </tr>
+                  <tr>
+                    <td>Lasso regulation</td>
+                    <td>12</td>
+                    <td>93%~94%</td>
+                  </tr>
+                  <tr>
+                    <td>Exhaustive search</td>
+                    <td>4</td>
+                    <td>92%</td>
+                  </tr>
+                  <tr>
+                    <td>Step Backward</td>
+                    <td>1</td>
+                    <td>83%~88%</td>
+                  </tr>
+                </table>
+                
+                <p class="feature-content">Based on the results, We discovered that filtering by <b>Correlation Values</b> created the best output</p>
+                <p class="feature-content">This is how we did:</p>
+                <p class="feature-content">We created this heatmap for the original dataset, there were some features had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature</p>
+                <img src="{{ url_for('static', filename='images/heatmap30.png') }}" width="60%">
+                <p class="feature-content">This code will filter out the features have high correlation with other features, we got the best combination when threshold = 0.9</p>
+                <img src="{{ url_for('static', filename='images/correlation.png') }}" width="60%">
+                <p class="feature-content">This is the final heatmap for the correlation values. We only kept 20 of the 30 features</p>
+                <img src="{{ url_for('static', filename='images/heatmap20.png') }}" width="60%">
+                <p class="feature-content">And then we compare the selected dataset and the original dataset</p>
+                <table style="width:60%" border="1">
+                  <tr>
+                    <th>ML Model</th>
+                    <th>Selected Features</th> 
+                    <th>Original Features</th>
+                  </tr>
+                  <tr>
+                    <td>Support Vector Machine</td>
+                    <td>97.9%</td>
+                    <td>96.5%</td>
+                  </tr>
+                  <tr>
+                    <td>Logistic Regression</td>
+                    <td>96.4%</td>
+                    <td>96.5%</td>
+                  </tr>
+                  <tr>
+                    <td>K Nearest Neighbor</td>
+                    <td>97.2%</td>
+                    <td>96.5%</td>
+                  </tr>
+                  <tr>
+                    <td>Random Forest</td>
+                    <td>95%</td>
+                    <td>92.9%</td>
+                  </tr>
+                  <tr>
+                    <td>Naive Bayes</td>
+                    <td>90.8%</td>
+                    <td>94.3%</td>
+                  </tr>
+                  <tr>
+                    <td>Deep Learning</td>
+                    <td>94.4%</td>
+                    <td>95.6%</td>
+                  </tr>
+                </table>
+                <p class="feature-content">According to the table, we got the best outcome when we applyed <b>SVM</b> on <b>Selected Features</b></p>
+                <img src="{{ url_for('static', filename='images/confusion_matrix_SVC.png') }}" width="40%">
+                <p class="feature-content">We think it might be because of some reasons below:</p>
+                <ul>
+                    <li>This dataset is simple and it might be well organized already</li>
+                    <li>The features are well chosen by doctors who had affluent domain knowledge</li>
+                    <li>Dataset is small(568 samples and 30 features)</li>
+                </ul>
+          </article>
+        </div>
+   <!-- <div class="col-md-4">-->
+
+
+    <!-- Start of footer -->
+    <footer class="footer navbar-fixed-bottom">
+      <div class="two-toned-footer-color"></div>
+      <p class="text-muted text-muted-footer text-center">
+        <a href="https://github.com/sharonsu94/breast-cancer-prediction.git">Github link</a>
+
+      </p>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
