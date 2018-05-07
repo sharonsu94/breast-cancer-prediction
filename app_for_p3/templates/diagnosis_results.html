@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Breast Cancer Machine Learning</title>
+
+        <!-- Boostrap Stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">
+
+        <!-- Our own CSS stylesheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" media="screen">
+
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Start of navbar -->
+        <nav class="navbar navbar-default">
+        <div class="container-fluid navbar-custom">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <div class="col-6">
+                <a class="navbar-brand" href="/" id="logo">Breast Cancer Machine Learning</a>
+                </div>
+            </div>
+            <div class = "col-2">
+                <img src="{{ url_for('static', filename='images/pink_ribbon.png') }}" id="ribbon-image">
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                <li>
+                    <a href="/visualization" role="button" aria-haspopup="true" aria-expanded="false">Visualization</a>
+                </li>
+                <li>
+                    <a href="/features" role="button" aria-haspopup="true" aria-expanded="false">Feature Engineering</a>
+                </li>
+                <li>
+                    <a href="/diagnosis_app" role="button" aria-haspopup="true" aria-expanded="false">Diagnosis App</a>
+                </li>
+                <li>
+                    <a href="data1" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+                </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+            </div>
+        </div><!-- /.container-fluid -->
+        </nav>
+        <!-- End of navbar -->
+
+        <!-- Start of container -->
+        <div class="container">
+        <section class="row">
+            <div class="col-md-8">
+            <table id="resultsTable"></table>
+            <form method="GET" enctype="multipart/form-data" action="{{ url_for('diagnosis_app')}}">
+                <input type="submit" value="Upload another csv">
+            </form>
+            </div>
+        </section>
+        </div>
+
+
+        <!-- End of container -->
+
+        <!-- Start of footer -->
+        <footer class="footer navbar-fixed-bottom">
+        <div class="two-toned-footer-color"></div>
+        <p class="text-muted text-muted-footer text-center">
+            <a href="https://github.com/sharonsu94/breast-cancer-prediction.git">Github link</a>
+
+        </p>
+        </footer>
+        <!-- End of footer -->
+
+        <!-- jQuery CDN -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+        <!-- Bootstrap CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+        <!-- Populate Results Table -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/prediction_results.js') }}"></script>
+
+    </body>
+
+</html>
