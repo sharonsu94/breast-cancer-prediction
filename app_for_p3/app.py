@@ -41,13 +41,15 @@ def model_predict():
     X_input = input_df.drop('ID number', axis=1)
 
     # Scale X_input with the original X_train used to train the model
-    X_train = pd.read_csv('static/modeling/X_train.csv')
+    X_train = pd.read_csv('static/modeling/X_train_9928.csv')
+    print(X_train.shape)
     X_scaler = StandardScaler().fit(X_train)
     X_input_scaled = X_scaler.transform(X_input)
 
     # Load model and predict
-    model = load_model('static/modeling/diagonsis_model_10000.h5')
-    predictions = predictions = model.predict_classes(X_input_scaled).tolist()
+    model = load_model('static/modeling/diagnosis_model_9928.h5')
+    predictions = model.predict_classes(X_input_scaled).tolist()
+    print(predictions)
 
     # Format predictions to string
     predictions_str = []
@@ -96,4 +98,4 @@ def render_results_page():
     return render_template('diagnosis_results.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5011)
+    app.run(debug=True, port=5012)
