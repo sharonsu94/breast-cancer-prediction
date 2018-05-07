@@ -9,10 +9,10 @@
     <title>Breast Cancer Machine Learning</title>
 
     <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">
 
     <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="../static/css/styles.css" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" media="screen">
 
   </head>
 
@@ -31,33 +31,29 @@
               <span class="icon-bar"></span>
             </button>
             <div class="col-6">
-              <a class="navbar-brand" href="/index" id="logo">Breast Cancer Machine Learning</a>
+              <a class="navbar-brand" href="/" id="logo">Breast Cancer Machine Learning</a>
             </div>
           </div>
           <div class = "col-2">
-            <img src="../static/css/images/pink_ribbon.png" id="ribbon-image">
-        </div>
+            <img src="{{ url_for('static', filename='images/pink_ribbon.png') }}" id="ribbon-image">
+          </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right navbar-right-custom">
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analyses <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                 <li><a href="">Malignant vs Benign</a></li>
-                  <li><a href="">Malignant Recurrent vs Nonrecurrent</a></li>
-                </ul>
+              <li>
+                <a href="/visualization" role="button" aria-haspopup="true" aria-expanded="false">Visualization</a>
               </li>
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Sets <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                   <li><a href="/data1">Malignant vs Benign</a></li>
-                    <li><a href="/data2">Malignant Recurrent vs Nonrecurrent</a></li>
-                  </ul>
-                </li>  
-                <li><a href="/features">Features</a></li>
-                </ul>
+              <li>
+                <a href="/features" role="button" aria-haspopup="true" aria-expanded="false">Feature Engineering</a>
+              </li>
+              <li>
+                <a href="/diagnosis_app" role="button" aria-haspopup="true" aria-expanded="false">Diagnosis App</a>
+              </li>
+              <li>
+                <a href="data1" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+              </li>
+            </ul>
           </div><!-- /.navbar-collapse -->
         </div>
       </div><!-- /.container-fluid -->
@@ -189,25 +185,24 @@
                 </ul>
           </article>
         </div>
-    <div class="col-md-4">
+   <!-- <div class="col-md-4">-->
 
 
     <!-- Start of footer -->
     <footer class="footer navbar-fixed-bottom">
-            <div class="two-toned-footer-color"></div>
-            <p class="text-muted text-muted-footer text-center">
-              <a href="https://github.com/sharonsu94/breast-cancer-prediction.git">Github link</a>
-      
-            </p>
-          </footer>
-          <!-- End of footer -->
-      
-          <!-- jQuery CDN -->
-          <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-      
-          <!-- Bootstrap CDN -->
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        </body>
-      
-      </html>
-      
+      <div class="two-toned-footer-color"></div>
+      <p class="text-muted text-muted-footer text-center">
+        <a href="https://github.com/sharonsu94/breast-cancer-prediction.git">Github link</a>
+
+      </p>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
