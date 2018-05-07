@@ -61,15 +61,17 @@
     <!-- End of navbar -->
     
     <!-- Start of container -->
-    <div class="container">
+    <div class="container feature-container">
       <section class="row">
-        <div class="col-md-10">
-          <article class="description-content">
-            <h1 class="description-header">Feature Selection</h1>
+        <div class="col-md-12">
+          <article class="feature-content">
+            <h1 class="description-header">Feature Engineering</h1>
                 <hr>
-                <!-- <iframe class="chart" src="d3.html" style="height:600px;width:1140px;"></iframe> -->
-                <p class="feature-content">The purpose was to choose features with a high correlation with the target and a low correlation with other features</p>
-                <p class="feature-content">The different methods that we used were:
+                <p>The purpose was to choose features with a high correlation with the target and a low correlation with other features</p>
+                <h1 class="description-header">Feature Selection Methods</h1>
+                <hr>
+                <iframe class="chart" src="d3.html" style="height:600px;width:1140px;"></iframe>
+                <p>The different methods that we used were:
                     <ul>
                         <li>Filter Methods</li>
                             <ul class="methods">
@@ -87,7 +89,7 @@
                                 <li>Hybrid recursive</li>
                             </ul>
                 </ul>
-                <p class="feature-content">And then we tested all results with:</p>
+                <p>And then we tested all results with:</p>
                 <ul>
                   <li>SVM (Support Vector Machine)</li>
                   <li>KNN (K Nearest Neighbor)</li>
@@ -95,8 +97,8 @@
                   <li>Naive Bayes</li>
                   <li>Deep Learning</li>
                 </ul>
-                <p class="feature-content">Average Performance: C > R > H > L > E > B</p>
-                <table style="width:60%" border="1">
+                <p>Average Performance: C > R > H > L > E > B</p>
+                <table style="width:60%" border="1" class="feature-list">
                   <tr>
                     <th>Method</th>
                     <th>Number of Features</th> 
@@ -134,16 +136,17 @@
                   </tr>
                 </table>
                 
-                <p class="feature-content">Based on the results, We discovered that filtering by <b>Correlation Values</b> created the best output</p>
-                <p class="feature-content">This is how we did:</p>
-                <p class="feature-content">We created this heatmap for the original dataset, there were some features had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature</p>
-                <img src="{{ url_for('static', filename='images/heatmap30.png') }}" width="60%">
-                <p class="feature-content">This code will filter out the features have high correlation with other features, we got the best combination when threshold = 0.9</p>
-                <img src="{{ url_for('static', filename='images/correlation.png') }}" width="60%">
-                <p class="feature-content">This is the final heatmap for the correlation values. We only kept 20 of the 30 features</p>
-                <img src="{{ url_for('static', filename='images/heatmap20.png') }}" width="60%">
-                <p class="feature-content">And then we compare the selected dataset and the original dataset</p>
-                <table style="width:60%" border="1">
+                <p>Based on the results, We discovered that filtering by <b>Correlation Values</b> created the best output</p>
+                <h1 class="description-header">Correlation Values</h1>
+                <hr>
+                <p>We created this heatmap for the original dataset, there were some features had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature</p>
+                <img src="{{ url_for('static', filename='images/heatmap30.png') }}" class="feature-graph">
+                <p>This code will filter out the features have high correlation with other features, we got the best combination when threshold = 0.9</p>
+                <img src="{{ url_for('static', filename='images/correlation.png') }}" class="feature-graph">
+                <p>This is the final heatmap for the correlation values. We only kept 20 of the 30 features</p>
+                <img src="{{ url_for('static', filename='images/heatmap20.png') }}" class="feature-graph">
+                <p>And then we compare the selected dataset and the original dataset</p>
+                <table style="width:60%" border="1" class="feature-list">
                   <tr>
                     <th>ML Model</th>
                     <th>Selected Features</th> 
@@ -180,9 +183,11 @@
                     <td>95.6%</td>
                   </tr>
                 </table>
-                <p class="feature-content">According to the table, we got the best outcome when we applyed <b>SVM</b> on <b>Selected Features</b></p>
-                <img src="{{ url_for('static', filename='images/confusion_matrix_SVC.png') }}" width="40%">
-                <p class="feature-content">We think it might be because of some reasons below:</p>
+                <h1 class="description-header">Conclusion</h1>
+                <hr>
+                <p>According to the table, we got the best outcome when we applyed <b>SVM</b> on <b>Selected Features</b></p>
+                <img src="{{ url_for('static', filename='images/confusion_matrix_SVC.png') }}" class="feature-cm">
+                <p>We think it might be because of some reasons below:</p>
                 <ul>
                     <li>This dataset is simple and it might be well organized already</li>
                     <li>The features are well chosen by doctors who had affluent domain knowledge</li>

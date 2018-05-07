@@ -298,6 +298,10 @@ table {
   font-size: 15px;
 }
 
+table th {
+  text-align: center;
+}
+
 table td.title, td.description {
   text-align: left;
 }
@@ -346,14 +350,52 @@ table colgroup.data col {
 
 /* ----FEATURE START---- */
 .feature-content {
-  padding: 30px;
+  padding: 50px;
   margin-top: 32px;
   background-color: #fff;
-  font-size: 30px;
+  font-size: 20px;
   color: slategray;
   font-family: Georgia, Times, "Times New Roman", serif;
 }
 
+.feature-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
+.feature-container {
+  margin-left: auto;
+  margin-right: auto;
+}
 
+/* .feature-article {
+  padding-right: 30px;
+  padding-left: 30px;
+} */
+
+.feature-graph {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+}
+
+.feature-cm {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 50%;
+}
+
+.feature-table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 /* ----FEATURE END---- */
