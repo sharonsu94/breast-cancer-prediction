@@ -343,3 +343,17 @@ table colgroup.data col {
     font-size: 20px;
     color: darkgrey;
 }
+
+/* ----FEATURE START---- */
+.feature-content {
+  padding: 30px;
+  margin-top: 32px;
+  background-color: #fff;
+  font-size: 30px;
+  color: slategray;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+
+
+/* ----FEATURE END---- */

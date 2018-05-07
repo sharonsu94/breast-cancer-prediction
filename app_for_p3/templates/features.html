@@ -9,10 +9,10 @@
     <title>Breast Cancer Machine Learning</title>
 
     <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" media="screen">
 
     <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="../static/css/styles.css" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" media="screen">
 
   </head>
 
@@ -31,33 +31,29 @@
               <span class="icon-bar"></span>
             </button>
             <div class="col-6">
-              <a class="navbar-brand" href="/index" id="logo">Breast Cancer Machine Learning</a>
+              <a class="navbar-brand" href="/" id="logo">Breast Cancer Machine Learning</a>
             </div>
           </div>
           <div class = "col-2">
-            <img src="../static/css/images/pink_ribbon.png" id="ribbon-image">
-        </div>
+            <img src="{{ url_for('static', filename='images/pink_ribbon.png') }}" id="ribbon-image">
+          </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right navbar-right-custom">
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Analyses <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                 <li><a href="">Malignant vs Benign</a></li>
-                  <li><a href="">Malignant Recurrent vs Nonrecurrent</a></li>
-                </ul>
+              <li>
+                <a href="/visualization" role="button" aria-haspopup="true" aria-expanded="false">Visualization</a>
               </li>
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Sets <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                   <li><a href="/data1">Malignant vs Benign</a></li>
-                    <li><a href="/data2">Malignant Recurrent vs Nonrecurrent</a></li>
-                  </ul>
-                </li>  
-                <li><a href="/features">Features</a></li>
-                </ul>
+              <li>
+                <a href="/features" role="button" aria-haspopup="true" aria-expanded="false">Feature Engineering</a>
+              </li>
+              <li>
+                <a href="/diagnosis_app" role="button" aria-haspopup="true" aria-expanded="false">Diagnosis App</a>
+              </li>
+              <li>
+                <a href="data1" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+              </li>
+            </ul>
           </div><!-- /.navbar-collapse -->
         </div>
       </div><!-- /.container-fluid -->
@@ -67,30 +63,31 @@
     <!-- Start of container -->
     <div class="container">
       <section class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
           <article class="description-content">
             <h1 class="description-header">Feature Selection</h1>
                 <hr>
-                <p>The purpose was to choose features with a high correlation with the target and a low correlation with other features.</p>
-                <p>The different methods that we used were:
+                <!-- <iframe class="chart" src="d3.html" style="height:600px;width:1140px;"></iframe> -->
+                <p class="feature-content">The purpose was to choose features with a high correlation with the target and a low correlation with other features</p>
+                <p class="feature-content">The different methods that we used were:
                     <ul>
-                        <li type="square">Filter Methods</li>
+                        <li>Filter Methods</li>
                             <ul class="methods">
                                 <li>Correlation Values</li>
                             </ul>
-                        <li type="square">Wrapper Methods</li>
+                        <li>Wrapper Methods</li>
                             <ul class="methods">
                                 <li>Step backward</li>
                                 <li>Exhaustive search</li>
                             </ul>
-                        <li type="square">Embadded Methods</li>
+                        <li>Embadded Methods</li>
                             <ul class="methods">
                                 <li>Lasso regulation</li>
                                 <li>Random Forest recursive</li>
                                 <li>Hybrid recursive</li>
                             </ul>
                 </ul>
-                <p>And then we tested all results with:</p>
+                <p class="feature-content">And then we tested all results with:</p>
                 <ul>
                   <li>SVM (Support Vector Machine)</li>
                   <li>KNN (K Nearest Neighbor)</li>
@@ -98,8 +95,8 @@
                   <li>Naive Bayes</li>
                   <li>Deep Learning</li>
                 </ul>
-                <p>Average Performance: C > R > H > L > E > B</p>
-                <table style="width:60%">
+                <p class="feature-content">Average Performance: C > R > H > L > E > B</p>
+                <table style="width:60%" border="1">
                   <tr>
                     <th>Method</th>
                     <th>Number of Features</th> 
@@ -137,14 +134,16 @@
                   </tr>
                 </table>
                 
-                <p>Based on the results, We discovered that filtering by <b>Correlation Values</b></p>
-                <p>Here is the flow:</p>
-                <p>Based on the heatmap that I created, there were some features that had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature.</p>
+                <p class="feature-content">Based on the results, We discovered that filtering by <b>Correlation Values</b> created the best output</p>
+                <p class="feature-content">This is how we did:</p>
+                <p class="feature-content">We created this heatmap for the original dataset, there were some features had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature</p>
                 <img src="{{ url_for('static', filename='images/heatmap30.png') }}" width="60%">
-                <p>This is the final heat map for the correlation values. We only kept 20 of the 30 features. </p>
+                <p class="feature-content">This code will filter out the features have high correlation with other features, we got the best combination when threshold = 0.9</p>
+                <img src="{{ url_for('static', filename='images/correlation.png') }}" width="60%">
+                <p class="feature-content">This is the final heatmap for the correlation values. We only kept 20 of the 30 features</p>
                 <img src="{{ url_for('static', filename='images/heatmap20.png') }}" width="60%">
-
-                <table style="width:60%">
+                <p class="feature-content">And then we compare the selected dataset and the original dataset</p>
+                <table style="width:60%" border="1">
                   <tr>
                     <th>ML Model</th>
                     <th>Selected Features</th> 
@@ -153,37 +152,39 @@
                   <tr>
                     <td>Support Vector Machine</td>
                     <td>97.9%</td>
-                    <td>?</td>
+                    <td>96.5%</td>
                   </tr>
                   <tr>
                     <td>Logistic Regression</td>
                     <td>96.4%</td>
-                    <td>?</td>
+                    <td>96.5%</td>
                   </tr>
                   <tr>
                     <td>K Nearest Neighbor</td>
                     <td>97.2%</td>
-                    <td>?</td>
+                    <td>96.5%</td>
                   </tr>
                   <tr>
                     <td>Random Forest</td>
                     <td>95%</td>
-                    <td>?</td>
+                    <td>92.9%</td>
                   </tr>
                   <tr>
                     <td>Naive Bayes</td>
-                    <td>90.8</td>
-                    <td>?</td>
+                    <td>90.8%</td>
+                    <td>94.3%</td>
                   </tr>
                   <tr>
                     <td>Deep Learning</td>
-                    <td>97.8%</td>
-                    <td>?</td>
+                    <td>94.4%</td>
+                    <td>95.6%</td>
                   </tr>
                 </table>
-
+                <p class="feature-content">According to the table, we got the best outcome when we applyed <b>SVM</b> on <b>Selected Features</b></p>
+                <img src="{{ url_for('static', filename='images/confusion_matrix_SVC.png') }}" width="40%">
+                <p class="feature-content">We think it might be because of some reasons below:</p>
                 <ul>
-                    <li>This dataset might be well organized</li>
+                    <li>This dataset is simple and it might be well organized already</li>
                     <li>The features are well chosen by doctors who had affluent domain knowledge</li>
                     <li>Dataset is small(568 samples and 30 features)</li>
                 </ul>
