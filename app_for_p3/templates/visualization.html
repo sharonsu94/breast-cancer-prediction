@@ -51,7 +51,7 @@
                 <a href="/diagnosis_app" role="button" aria-haspopup="true" aria-expanded="false">Diagnosis App</a>
               </li>
               <li>
-                <a href="data1" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+                <a href="/data1" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
               </li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -65,7 +65,7 @@
     <section id="visual">
     <div class="row">
         <div class="col-md-12">
-            <a href="/visualization"><img src="../static/css/images/output.png" width="100%"></a>
+            <a href="/visualization"><img src="{{ url_for('static', filename='images/output.png')}}" width="100%"></a>
         </div>
     </div>
     </section>
