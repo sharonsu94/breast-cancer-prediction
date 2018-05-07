@@ -140,9 +140,9 @@
                 <p>Based on the results, We discovered that filtering by <b>Correlation Values</b></p>
                 <p>Here is the flow:</p>
                 <p>Based on the heatmap that I created, there were some features that had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature.</p>
-                <img src="../static/css/images/heatmap30.png" width="60%">
+                <img src="{{ url_for('static', filename='images/heatmap30.png') }}" width="60%">
                 <p>This is the final heat map for the correlation values. We only kept 20 of the 30 features. </p>
-                <img src="../static/css/images/heatmap20.png" width="60%">
+                <img src="{{ url_for('static', filename='images/heatmap20.png') }}" width="60%">
 
                 <table style="width:60%">
                   <tr>
