@@ -83,7 +83,7 @@ def render_flare():
     return jsonify({"name": "Cell Nucleus",
      "children": [
          {"name": "Radius", 
-             "children": [{"name": "a straight line from the center to the circumference of the nucleus"}]}, 
+             "children": [{"name": "a straight line from the center to the nuclear border"}]}, 
          {"name": "Perimeter", 
              "children": [{"name": "the continuous line forming the boundary of the nucleus"}]}, 
          {"name": "Area"}, 

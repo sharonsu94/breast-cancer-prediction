@@ -31,7 +31,7 @@
                       <script src="//d3js.org/d3.v3.min.js"></script>
                       <script>
                       
-                      var margin = {top: 0, right: 100, bottom: 5, left: 200},
+                      var margin = {top: 0, right: 100, bottom: 5, left: 110},
                           width = 900 - margin.right - margin.left,
                           height = 600 - margin.top - margin.bottom;
                       
@@ -79,7 +79,7 @@
                             links = tree.links(nodes);
                       
                         // Normalize for fixed-depth.
-                        nodes.forEach(function(d) { d.y = d.depth * 90; });
+                        nodes.forEach(function(d) { d.y = d.depth * 70; });
                       
                         // Update the nodes…
                         var node = svg.selectAll("g.node")
