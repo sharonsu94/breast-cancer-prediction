@@ -78,14 +78,14 @@
                             </ul>
                         <li>Wrapper Methods</li>
                             <ul class="methods">
-                                <li>Step backward</li>
-                                <li>Exhaustive search</li>
+                                <li>Step Backward</li>
+                                <li>Exhaustive Search</li>
                             </ul>
-                        <li>Embadded Methods</li>
+                        <li>Embedded Methods</li>
                             <ul class="methods">
-                                <li>Lasso regulation</li>
-                                <li>Random Forest recursive</li>
-                                <li>Hybrid recursive</li>
+                                <li>Lasso Regulation</li>
+                                <li>Random Forest Recursive</li>
+                                <li>Hybrid Recursive</li>
                             </ul>
                 </ul>
                 <p>And then we tested all results with:</p>
@@ -109,22 +109,22 @@
                     <td>~98%</td>
                   </tr>
                   <tr>
-                    <td>Random Forest recursive</td>
+                    <td>Random Forest Recursive</td>
                     <td>10</td>
                     <td>95%~96%</td>
                   </tr>
                   <tr>
-                    <td>Hybrid recursive</td>
+                    <td>Hybrid Recursive</td>
                     <td>9</td>
                     <td>~95%</td>
                   </tr>
                   <tr>
-                    <td>Lasso regulation</td>
+                    <td>Lasso Regulation</td>
                     <td>12</td>
                     <td>93%~94%</td>
                   </tr>
                   <tr>
-                    <td>Exhaustive search</td>
+                    <td>Exhaustive Search</td>
                     <td>4</td>
                     <td>92%</td>
                   </tr>
@@ -135,16 +135,16 @@
                   </tr>
                 </table>
                 
-                <p>Based on the results, We discovered that filtering by <b>Correlation Values</b> created the best output</p>
+                <p>Based on the results, we discovered that filtering by <b>Correlation Values</b> created the best output</p>
                 <h1 class="description-header">Correlation Values</h1>
                 <hr>
-                <p>We created this heatmap for the original dataset, there were some features had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature</p>
+                <p>We created this heatmap for the original dataset, there were some features that had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature.</p>
                 <img src="{{ url_for('static', filename='images/heatmap30.png') }}" class="feature-graph">
-                <p>This code will filter out the features have high correlation with other features, we got the best combination when threshold = 0.9</p>
+                <p>This code will filter out the features that a have high correlation with other features; we get the best combination when the threshold = 0.9.</p>
                 <img src="{{ url_for('static', filename='images/correlation.png') }}" class="feature-graph">
-                <p>This is the final heatmap for the correlation values. We only kept 20 of the 30 features</p>
+                <p>This is the final heatmap for the correlation values. We only kept 20 of the 30 features.</p>
                 <img src="{{ url_for('static', filename='images/heatmap20.png') }}" class="feature-graph">
-                <p>And then we compare the selected dataset and the original dataset</p>
+                <p>And then we compared the selected dataset with the original dataset</p>
                 <table style="width:60%" border="1" class="feature-list">
                   <tr>
                     <th>ML Model</th>
@@ -184,13 +184,12 @@
                 </table>
                 <h1 class="description-header">Conclusion</h1>
                 <hr>
-                <p>According to the table, we got the best outcome when we applyed <b>SVM</b> on <b>Selected Features</b></p>
+                <p>According to the table, we achieved the best outcome when we applied <b>SVM</b> on <b>Selected Features</b></p>
                 <img src="{{ url_for('static', filename='images/confusion_matrix_SVC.png') }}" class="feature-cm">
-                <p>We think it might be because of some reasons below:</p>
+                <p>Our reasoning:</p>
                 <ul>
-                    <li>This dataset is simple and it might be well organized already</li>
-                    <li>The features are well chosen by doctors who had affluent domain knowledge</li>
-                    <li>Dataset is small(568 samples and 30 features)</li>
+                    <li>The dataset is simple and small (568 samples and 30 features); it might have been organized already</li>
+                    <li>The features were well chosen by doctors who had affluent domain knowledge</li>
                 </ul>
           </article>
         </div>
