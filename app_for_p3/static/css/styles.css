@@ -119,7 +119,7 @@ body {
   font-family: Georgia, Times, "Times New Roman", serif;
 
   /* Typography */
-  font-size: 32px;
+  font-size: 22px;
   font-weight: bold;
   color: #EE7199;
 }
@@ -398,4 +398,6 @@ table colgroup.data col {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+
 /* ----FEATURE END---- */

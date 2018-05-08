@@ -67,36 +67,36 @@
           <article class="feature-content">
             <h1 class="description-header">Feature Engineering</h1>
                 <hr>
-                <p>The purpose was to choose features with a high correlation with the target and a low correlation with other features</p>
+                <p style="font-size:20px">The purpose was to choose features with a high correlation with the target and a low correlation with other features</p>
                 <h1 class="description-header">Feature Selection Methods</h1>
                 <hr>
-                <p>The different methods that we used were:
+                <p style="font-size:20px">The different methods that we used were:
                     <ul>
-                        <li>Filter Methods</li>
+                        <li style="font-size:20px"> Filter Methods</li>
                             <ul class="methods">
-                                <li>Correlation Values</li>
+                                <li style="font-size:20px">Correlation Values</li>
                             </ul>
-                        <li>Wrapper Methods</li>
+                        <li style="font-size:20px">Wrapper Methods</li>
                             <ul class="methods">
-                                <li>Step Backward</li>
-                                <li>Exhaustive Search</li>
+                                <li style="font-size:20px">Step Backward</li>
+                                <li style="font-size:20px">Exhaustive Search</li>
                             </ul>
-                        <li>Embedded Methods</li>
+                        <li style="font-size:20px">Embedded Methods</li>
                             <ul class="methods">
-                                <li>Lasso Regulation</li>
-                                <li>Random Forest Recursive</li>
-                                <li>Hybrid Recursive</li>
+                                <li style="font-size:20px">Lasso Regulation</li>
+                                <li style="font-size:20px">Random Forest Recursive</li>
+                                <li style="font-size:20px">Hybrid Recursive</li>
                             </ul>
                 </ul>
-                <p>And then we tested all results with:</p>
+                <p style="font-size:20px">And then we tested all results with:</p>
                 <ul>
-                  <li>SVM (Support Vector Machine)</li>
-                  <li>KNN (K Nearest Neighbor)</li>
-                  <li>Random Forest</li>
-                  <li>Naive Bayes</li>
-                  <li>Deep Learning</li>
+                  <strong><li style="font-size:20px">SVM (Support Vector Machine)</li>
+                  <li style="font-size:20px">KNN (K Nearest Neighbor)</li>
+                  <li style="font-size:20px">Random Forest</li>
+                  <li style="font-size:20px">Naive Bayes</li>
+                  <li style="font-size:20px">Deep Learning</li></strong>
                 </ul>
-                <p>Average Performance: C > R > H > L > E > B</p>
+                <p style="font-size:20px">Average Performance: C > R > H > L > E > B</p>
                 <table style="width:60%" border="1" class="feature-list">
                   <tr>
                     <th>Method</th>
@@ -135,16 +135,16 @@
                   </tr>
                 </table>
                 
-                <p>Based on the results, we discovered that filtering by <b>Correlation Values</b> created the best output</p>
+                <p style="font-size:20px">Based on the results, we discovered that filtering by <b>Correlation Values</b> created the best output</p>
                 <h1 class="description-header">Correlation Values</h1>
                 <hr>
-                <p>We created this heatmap for the original dataset, there were some features that had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature.</p>
+                <p style="font-size:20px">We created this heatmap for the original dataset, there were some features that had high correlations with each other, so we removed features that had a correlation value higher than 0.9 because of its duplicative nature.</p>
                 <img src="{{ url_for('static', filename='images/heatmap30.png') }}" class="feature-graph">
-                <p>This code will filter out the features that a have high correlation with other features; we get the best combination when the threshold = 0.9.</p>
+                <p style="font-size:20px">This code will filter out the features that a have high correlation with other features; we get the best combination when the threshold = 0.9.</p>
                 <img src="{{ url_for('static', filename='images/correlation.png') }}" class="feature-graph">
-                <p>This is the final heatmap for the correlation values. We only kept 20 of the 30 features.</p>
+                <p style="font-size:20px">This is the final heatmap for the correlation values. We only kept 20 of the 30 features.</p>
                 <img src="{{ url_for('static', filename='images/heatmap20.png') }}" class="feature-graph">
-                <p>And then we compared the selected dataset with the original dataset</p>
+                <p style="font-size:20px">And then we compared the selected dataset with the original dataset</p>
                 <table style="width:60%" border="1" class="feature-list">
                   <tr>
                     <th>ML Model</th>
@@ -184,12 +184,12 @@
                 </table>
                 <h1 class="description-header">Conclusion</h1>
                 <hr>
-                <p>According to the table, we achieved the best outcome when we applied <b>SVM</b> on <b>Selected Features</b></p>
+                <p style="font-size:20px">According to the table, we achieved the best outcome when we applied <b>SVM</b> on <b>Selected Features</b></p>
                 <img src="{{ url_for('static', filename='images/confusion_matrix_SVC.png') }}" class="feature-cm">
-                <p>Our reasoning:</p>
+                <p style="font-size:20px">Our reasoning:</p>
                 <ul>
-                    <li>The dataset is simple and small (568 samples and 30 features); it might have been organized already</li>
-                    <li>The features were well chosen by doctors who had affluent domain knowledge</li>
+                    <li style="font-size:20px">The dataset is simple and small (568 samples and 30 features); it might have been organized already</li>
+                    <li style="font-size:20px">The features were well chosen by doctors who had affluent domain knowledge</li>
                 </ul>
           </article>
         </div>
