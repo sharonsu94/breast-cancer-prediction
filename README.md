@@ -15,3 +15,6 @@ The purpose of this project was to develop a highly accurate machine learning mo
 - Malignant vs benign (569 samples, 30 features)
 - Recurrent vs nonrecurrent (198 samples, 32 features)
 
+## Heroku Deployment 
+- Link: https://breast-cancer-machine-learning.herokuapp.com/
+
